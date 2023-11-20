@@ -1,0 +1,272 @@
+<div id="content">
+    <header>
+        <div id="logoContainer">
+            <!-- <img src="assets/pick.svg" alt="Description" /> -->
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="1079.000000pt" height="1280.000000pt" viewBox="0 0 1079.000000 1280.000000"
+            preserveAspectRatio="xMidYMid meet">
+           <metadata>
+           Created by potrace 1.15, written by Peter Selinger 2001-2017
+           </metadata>
+           <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+           fill="#000000" stroke="none">
+           <path d="M4830 12794 c-935 -43 -1710 -175 -2430 -414 -733 -243 -1301 -570
+           -1720 -990 -400 -400 -620 -857 -671 -1390 -15 -160 1 -536 32 -775 80 -608
+           384 -1553 856 -2660 909 -2132 2275 -4560 3245 -5774 436 -544 765 -812 970
+           -788 401 48 1423 1247 2635 3092 1645 2505 2917 5066 2998 6035 3 41 14 131
+           23 200 26 191 23 516 -7 683 -66 378 -206 687 -459 1017 -87 113 -350 374
+           -487 484 -137 109 -410 292 -575 384 -863 481 -1994 781 -3310 877 -200 15
+           -923 27 -1100 19z"/>
+           </g>
+           </svg>
+
+            <div id="logo">Scales<br>Map</div>
+        </div>
+        <div class="menu_tabs">
+    
+            <div class="menu_tab">
+                <input type="radio" id="tab-1" name="tab-group-1" checked>
+                <label class="tabLabel" for="tab-1">Filters</label>
+                
+                <div class="menu_content">
+                    <div class="content">
+
+                        <div class="settingsToggle">
+                            <div class="checkBox">
+                                <label>Show Notes: </label>
+                                <label 
+                                    for="showNotes" 
+                                    class="checkBoxLabel"
+                                    (click)="toggleShowNotesCheckbox()"
+                                    [class.checked]="isCheckedShowNotes"
+                                    >
+                                </label>
+                                <input 
+                                    type="checkbox" 
+                                    id="showNotes" 
+                                    [(ngModel)]="isCheckedShowNotes"
+                                />
+                            </div>
+                            <div class="checkBox">
+                                <label>Dark theme: </label>
+                                <label 
+                                    for="darkTheme" 
+                                    class="checkBoxLabel"
+                                    (click)="toggleDarkThemeCheckbox()"
+                                    [class.checked]="isCheckedDarkTheme"
+                                    >
+                                </label>
+                                <input 
+                                    type="checkbox" 
+                                    id="darkTheme" 
+                                    [(ngModel)]="isCheckedDarkTheme"
+                                />
+                            </div>
+                        </div>
+                        <!-- <div class="filters"> -->
+                            <form class="filters" 
+                                (ngSubmit)="onSubmit(filtersForm)"
+                                #filtersForm="ngForm"
+                                >
+                                <div class="selectors" id="scaleFilter">
+                                    <label for="">Choose your scale:</label>
+                                    <select 
+                                        name="scale" 
+                                        id="scale"
+                                        ngModel
+                                        (change)="onFiltersChange()"
+                                        >
+                                        <option value="note">By note</option>
+                                        <option value="major">Major</option>
+                                        <option value="minor">Pentanotic/Minor</option>
+                                    </select>
+                                </div>
+                                <div class="selectors" id="keyFilter">
+                                    <label for="">Choose your key:</label>
+                                    <select 
+                                        name="key" 
+                                        id="key"
+                                        ngModel
+                                        (change)="onFiltersChange()"
+                                        >
+                                        <option value="C">C</option>
+                                        <option value="C2">C#</option>
+                                        <option value="Db">Db</option>
+                                        <option value="D">D</option>
+                                        <option value="D2">D#</option>
+                                        <option value="Eb">Eb</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="F2">F#</option>
+                                        <option value="Gb">Gb</option>
+                                        <option value="G">G</option>
+                                        <option value="G2">G#</option>
+                                        <option value="Ab">Ab</option>
+                                        <option value="A">A</option>
+                                        <option value="A2">A#</option>
+                                        <option value="Bb">Bb</option>
+                                        <option value="B">B</option>
+                                    
+                                    </select>
+                                </div>
+                                <button #filterSubmit >
+                                </button>
+                            </form>
+                        <!-- </div> -->
+                    
+                    </div>
+                </div> 
+            </div>
+             
+            <div class="menu_tab">
+                <input type="radio" id="tab-2" name="tab-group-1">
+                <label class="tabLabel" for="tab-2">Instruments</label>
+                
+                <div class="menu_content">
+                    <span>content 2</span>
+                </div> 
+            </div>
+             
+             <div class="menu_tab">
+                <input type="radio" id="tab-3" name="tab-group-1">
+                <label class="tabLabel" for="tab-3">Suport Us</label>
+              
+                <div class="menu_content">
+                    <span>content 3</span>
+                </div> 
+            </div>
+            
+             
+         </div>
+        <!-- <form action="">
+            <label>                
+                Filters:
+            </label>
+        </form> -->
+    </header>
+    
+    <div id="card">
+        <div id="fretboard">
+            <div class="fret" id="fret1">
+                <div #F #note class="note F"><p>F</p></div>
+                <div #C #note class="note C"><p>C</p></div>
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+                <div #F #note class="note F"><p>F</p></div>
+            </div>
+            <div class="fret" id="fret2">
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+                <div #A #note class="note A"><p>A</p></div>
+                <div #E #note class="note E"><p>E</p></div>
+                <div #B #note class="note B"><p>B</p></div>
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+            </div>
+            <div class="fret" id="fret3">
+                <div class="marking">
+                    <div class="dot"></div>
+                </div>
+                <div #G #note class="note G"><p>G</p></div>
+                <div #D #note class="note D"><p>D</p></div>
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+                <div #F #note class="note F"><p>F</p></div>
+                <div #C #note class="note C"><p>C</p></div>
+                <div #G #note class="note G"><p>G</p></div>
+            </div>
+            <div class="fret" id="fret4">
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+                <div #B #note class="note B"><p>B</p></div>
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+            </div>
+            <div class="fret" id="fret5">
+                <div class="marking">
+                    <div class="dot"></div>
+                </div>
+                <div #A #note class="note A"><p>A</p></div>
+                <div #E #note class="note E"><p>E</p></div>
+                <div #C #note class="note C"><p>C</p></div>
+                <div #G #note class="note G"><p>G</p></div>
+                <div #D #note class="note D"><p>D</p></div>
+                <div #A #note class="note A"><p>A</p></div>
+            </div>
+            <div class="fret" id="fret6">
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+                <div #F #note class="note F"><p>F</p></div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+            </div>
+            <div class="fret" id="fret7">
+                <div class="marking">
+                    <div class="dot"></div>
+                </div>
+                <div #B #note class="note B"><p>B</p></div>
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+                <div #D #note class="note D"><p>D</p></div>
+                <div #A #note class="note A"><p>A</p></div>
+                <div #E #note class="note E"><p>E</p></div>
+                <div #B #note class="note B"><p>B</p></div>
+            </div>
+            <div class="fret" id="fret8">
+                <div #C #note class="note C"><p>C</p></div>
+                <div #G #note class="note G"><p>G</p></div>
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+                <div #F #note class="note F"><p>F</p></div>
+                <div #C #note class="note C"><p>C</p></div>
+            </div>
+            <div class="fret" id="fret9">
+                <div class="marking">
+                    <div class="dot"></div>
+                </div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+                <div #E #note class="note E"><p>E</p></div>
+                <div #B #note class="note B"><p>B</p></div>
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+            </div>
+            <div class="fret" id="fret10">
+                <div #D #note class="note D"><p>D</p></div>
+                <div #A #note class="note A"><p>A</p></div>
+                <div #F #note class="note F"><p>F</p></div>
+                <div #C #note class="note C"><p>C</p></div>
+                <div #G #note class="note G"><p>G</p></div>
+                <div #D #note class="note D"><p>D</p></div>
+            </div>
+            <div class="fret" id="fret11">
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+                <div #ABb #note class="note doble ABb"><p>A#<br>Bb</p></div>
+                <div #FGb #note class="note doble FGb"><p>F#<br>Gb</p></div>
+                <div #CDb #note class="note doble CDb"><p>C#<br>Db</p></div>
+                <div #GAb #note class="note doble GAb"><p>G#<br>Ab</p></div>
+                <div #DEb #note class="note doble DEb"><p>D#<br>Eb</p></div>
+            </div>
+            <div class="fret" id="fret12">
+                <div class="marking">
+                    <div class="dot"></div>
+                    <div class="dot second"></div>
+                </div>
+                <div #E #note class="note E"><p>E</p></div>
+                <div #B #note class="note B"><p>B</p></div>
+                <div #G #note class="note G"><p>G</p></div>
+                <div #D #note class="note D"><p>D</p></div>
+                <div #A #note class="note A"><p>A</p></div>
+                <div #E #note class="note E"><p>E</p></div>
+            </div>
+
+            <div class="string" id="string01"></div>
+            <div class="string" id="string02"></div>
+            <div class="string" id="string03"></div>
+            <div class="string" id="string04"></div>
+            <div class="string" id="string05"></div>
+            <div class="string" id="string06"></div>
+        </div>
+    </div>
+
+</div>
