@@ -240,16 +240,20 @@ $fretColor02 : #462C18;
                     justify-content: center;
                     align-items: center;
                     display: flex;
+                    flex-direction: column;
                     // vertical-align: middle;
                     z-index: 10;
                     font-size: 15px;
                     font-weight: 700;
                     color: $text-light;
                     visibility: hidden;
-                    p {
+                    span{
                         display: flex;
-                        margin: 0;
-                        opacity: 1;
+                        p {
+
+                            opacity: 1;
+                            margin: 0;
+                        }
                        
                     }
 
@@ -261,11 +265,24 @@ $fretColor02 : #462C18;
                     font-size: 12px;
                 }
                 .note.key {
-                    background-color: $success;
+                    background-color: #1ddd4ac0;
                     visibility: visible;
                 }
                 .note.scale {
-                    background-color: $warning;
+                    background-color: #9e7e1ec0;
+                    visibility: visible;
+                }
+                .note.firstNote {
+                    font-size: 15px;
+                    .second {
+                        display: none;
+                    }
+                }
+                .note.secondNote {
+                    font-size: 15px;
+                    .first {
+                        display: none;
+                    }
                 }
             }
             .marking {
