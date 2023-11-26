@@ -14,14 +14,17 @@
     "@angular/common": "^16.0.0",
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
+    "@angular/fire": "^16.0.0",
     "@angular/forms": "^16.0.0",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "firebase": "^10.6.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "update": "^0.7.4",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
