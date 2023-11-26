@@ -1,7 +1,5 @@
 import { Component, AfterViewInit, ElementRef, Renderer2, QueryList, ViewChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NativeSelect } from '@material-ui/core';
-import { keys } from '@material-ui/core/styles/createBreakpoints';
 
 @Component({
   selector: 'app-fretboard',
