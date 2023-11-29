@@ -1,0 +1,262 @@
+@import '../../global-variables.scss';
+
+$fretColor01 : #1C100C;
+$fretColor02 : #462C18;
+
+#card {
+    // background-color: $background-light;
+    // width: 95%;
+    // height: 45%;
+    margin-top: 17%;
+    #fretboard {
+        width: 90%;
+        height: 42vh;
+        margin: 1% 1% 1% 9%;
+        box-shadow: 0px 0px 9px 4px $gray-900;
+        // background-color: #462C18;
+        background-image: radial-gradient(#462C18, $fretColor02, $fretColor02, $fretColor02, $fretColor02, $fretColor02, #332012, $fretColor01, #0a0605);
+        position: relative;
+        display: flex;
+        .fret {
+            z-index: 10;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .note {
+                height: 16.7%;
+                width: 7vh;
+                border-radius: 100%;
+                background-color: #6c757d7e;
+                // opacity: 0.7;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                // vertical-align: middle;
+                z-index: 10;
+                font-size: 15px;
+                font-weight: 700;
+                color: $text-light;
+                visibility: hidden;
+                span{
+                    display: flex;
+                    p {
+
+                        opacity: 1;
+                        margin: 0;
+                    }
+                   
+                }
+
+            }
+            .note.show {
+                visibility: visible;
+            }
+            .doble {
+                font-size: 12px;
+            }
+            .note.key {
+                background: radial-gradient(circle at 65% 15%, rgb(66, 170, 89) 3%, rgb(55, 173, 81) 3%, rgb(12, 139, 0) 60%, rgb(115, 255, 0) 100%);  
+                // background-color: #1ddd4ac0;
+                visibility: visible;
+                // box-shadow: inset -25px -15px 40px rgba(0,0,0,.3);
+                // background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+            }
+            .note.scale {
+                // background-color: rgba(158, 126, 30, 0.753);
+                background: radial-gradient(circle at 65% 15%, rgb(128, 110, 57) 3%, rgb(133, 112, 51) 3%, rgb(117, 91, 14) 60%, rgb(189, 170, 114) 100%);
+                visibility: visible;
+            }
+            .note.firstNote {
+                font-size: 15px;
+                .second {
+                    display: none;
+                }
+            }
+            .note.secondNote {
+                font-size: 15px;
+                .first {
+                    display: none;
+                }
+            }
+        }
+        .marking {
+            width: 100%;
+            height: 100%;
+            left: 0%;
+            opacity: .8;
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .dot {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background-color: $gray-300;
+                z-index: 1;
+            }
+            .second {
+                margin-top: 200%;
+            }
+        }
+        #fret1 {
+            width: 10.5%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret2 {
+            width: 10%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret3 {
+            width: 9.5%;
+            border-right: 0.25vw  solid $gray-300;
+            // // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // &::after {
+            //     content: '';
+            //     position: absolute;
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            // }
+        }
+        #fret4 {
+            width: 9%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret5 {
+            width: 8.5%;
+            border-right: 0.25vw  solid $gray-300;
+            // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // &::after {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            // }
+        }
+        #fret6 {
+            width: 8%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret7 {
+            width: 7.5%;
+            border-right: 0.25vw  solid $gray-300;
+            // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // &::after {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            // }
+        }
+        #fret8 {
+            width: 7.5%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret9 {
+            width: 7.5%;
+            border-right: 0.25vw  solid $gray-300;
+            // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // &::after {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            // }
+        }
+        #fret10 {
+            width: 7%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret11 {
+            width: 6.5%;
+            border-right: 0.25vw  solid $gray-300;
+        }
+        #fret12 {
+            width: 6.5%;
+            // position: relative;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            // &::after {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            //     margin-top: 100%;
+            // }
+            // &::before {
+            //     content: '';
+            //     width: 25px;
+            //     height: 25px;
+            //     background-color: $gray-400;
+            //     border-radius: 100%;
+            //     display: flex;
+            // }
+        }
+        .string {
+            position: absolute;
+            width: 100%;
+            z-index: 9;
+        }
+        #string01 {
+            top: 8%;
+            // border: 1px solid $gray-400;
+            background-color: $gray-400;
+            height: 0.1%;
+        }
+        #string02 {
+            top: 24.8%;
+            background-color: $gray-400;
+            height: 0.1%;
+        }
+        #string03 {
+            top: 41.6%;
+            background-color: $gray-400;
+            height: 0.5%;
+        }
+        #string04 {
+            top: 58.4%;
+            background-color: $gray-400;
+            height: 1%;
+        }
+        #string05 {
+            top: 75%;
+            background-color: $gray-400;
+            height: 1.5%;
+        }
+        #string06 {
+            top: 91.5%;
+            background-color: $gray-400;
+            height: 2%;
+        }
+    }
+}

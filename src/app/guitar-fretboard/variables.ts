@@ -1,0 +1,1 @@
+export let notesC: any[] = [];
