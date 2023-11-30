@@ -43,22 +43,45 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
         this.clearAll();
         let result = this.loadingNotes.applyFilters(this.data, this.scales);
         
+        
+        // if (typeof(result[2]) !== 'undefined') {
+        //   // console.log(typeof(result[2][0]))
+        //   result[2].forEach((n: number) => {
+        //     result[0][(n-1)].push({skip: true});
+        //   });
+        // }
+
+        let count: number = 1;
+        let skip: boolean = false;
         result[0].forEach((notes: { note: string, targets: any[] }) => {
+          if (typeof(result[2]) !== 'undefined') {
+            result[2].forEach((n: number) => {
+              if (n === count) {
+                skip = true;
+              }
+            });
+          }
+          // debugger
+          if (!skip) {
+            notes.targets.forEach(element => {
 
-          notes.targets.forEach(element => {
-            if (notes.note.length === 2) {
-              this.checkSB(element, notes.note);
-            }
-
-            if (notes.note == result[1]) {
-              this.renderer.addClass(element.nativeElement, 'key')
-            } else {
-              this.renderer.addClass(element.nativeElement, 'scale')
-            }
-
-          });
-          
+              if (notes.note.length === 2) {
+                this.checkSB(element, notes.note);
+              }
+  
+              if (notes.note == result[1]) {
+                this.renderer.addClass(element.nativeElement, 'key')
+              } else {
+                this.renderer.addClass(element.nativeElement, 'scale')
+              }
+  
+            });  
+          }
+          skip = false;
+          count++;
         });
+        count = 1;
+        
       }
     }
     if (changes['isCheckedShowNotes'] && !changes['isCheckedShowNotes'].firstChange) {

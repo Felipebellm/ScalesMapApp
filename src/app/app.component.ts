@@ -11,6 +11,11 @@ export class AppComponent {
 
   isCheckedShowNotes: boolean = false;
   isCheckedDarkTheme: boolean = false;
+
+  isPentatonic: boolean = false;
+  isPentatonicMove: boolean = false;
+  isCheckedBluesNote: boolean = false;
+
   data: any[] = []
   @ViewChildren('filterSubmit') filterSubmit!: QueryList<ElementRef>;
 
@@ -30,7 +35,16 @@ export class AppComponent {
   }
 
   onSubmit(form: NgForm) {
-    // console.log(form.value.scale);
+    
+    if (form.value.scale === 'minorPentatonic' || form.value.scale === 'majorPentatonic') {
+      this.isPentatonic = true;
+
+      setTimeout(() => {
+        this.isPentatonicMove = true;
+      }, 500);
+    } else {
+      this.isPentatonic = false;
+    }
 
     let scale :string = form.value.scale;
     let key :string = form.value.key;

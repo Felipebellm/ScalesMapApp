@@ -419,6 +419,12 @@ export class LoadingNotesService {
           case 'minor':
             targets = [groupNotes.minor, groupNotes.key];
             break;
+          case 'minorPentatonic':
+            targets = [groupNotes.minor, groupNotes.key, [2,6]];
+            break;
+          case 'majorPentatonic':
+            targets = [groupNotes.major, groupNotes.key, [4,7]];
+            break;
           default:
             break;
         }
