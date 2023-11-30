@@ -69,49 +69,78 @@
                                 (ngSubmit)="onSubmit(filtersForm)"
                                 #filtersForm="ngForm"
                                 >
-                                <div class="selectors" id="scaleFilter">
-                                    <label for="">Choose your scale:</label>
-                                    <select 
-                                        name="scale" 
-                                        id="scale"
-                                        ngModel
-                                        (change)="onFiltersChange()"
-                                        >
-                                        <option value="note">By note</option>
-                                        <option value="major">Major</option>
-                                        <option value="minor">Minor</option>
-                                        <option value="minorPentatonic">Minor Pentatonic</option>
-                                        <option value="majorPentatonic">Major Pentatonic</option>
-                                    </select>
+                                <div class="formGroup">
+                                    <div class="expande">
+                                        <label [ngClass]="{'move': isPentatonicMove}" for="">Choose your scale:</label>
+                                        <div [ngClass]="{'move': isPentatonicMove}" class="selectors" id="scaleFilter">
+                                            
+                                            <select 
+                                                name="scale" 
+                                                id="scale"
+                                                ngModel
+                                                (change)="onFiltersChange()"
+                                                >
+                                                <option value="note">By note</option>
+                                                <option value="major">Major</option>
+                                                <option value="minor">Minor</option>
+                                                <option value="minorPentatonic">Minor Pentatonic</option>
+                                                <option value="majorPentatonic">Major Pentatonic</option>
+                                            </select>
+                                        </div>
+                                        <div class="bluesNote" [ngClass]="{'show': isPentatonic}">
+                                            <div class="settingsToggle">
+                                                <div class="checkBox">
+                                                    <label>Blues Note: </label>
+                                                    <label 
+                                                        for="bluesNote" 
+                                                        class="checkBoxLabel"
+                                                        [class.checked]="isCheckedBluesNote"
+                                                        >
+                                                    </label>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        id="bluesNote" 
+                                                        name="bluesNote" 
+                                                        [(ngModel)]="isCheckedBluesNote"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
                                 </div>
-                                <div class="selectors" id="keyFilter">
+                                <div class="formGroup">
                                     <label for="">Choose your key:</label>
-                                    <select 
-                                        name="key" 
-                                        id="key"
-                                        ngModel
-                                        (change)="onFiltersChange()"
-                                        >
-                                        <option value="C">C</option>
-                                        <option value="C2">C#</option>
-                                        <option value="Db">Db</option>
-                                        <option value="D">D</option>
-                                        <option value="D2">D#</option>
-                                        <option value="Eb">Eb</option>
-                                        <option value="E">E</option>
-                                        <option value="F">F</option>
-                                        <option value="F2">F#</option>
-                                        <option value="Gb">Gb</option>
-                                        <option value="G">G</option>
-                                        <option value="G2">G#</option>
-                                        <option value="Ab">Ab</option>
-                                        <option value="A">A</option>
-                                        <option value="A2">A#</option>
-                                        <option value="Bb">Bb</option>
-                                        <option value="B">B</option>
-                                    
-                                    </select>
+                                    <div class="selectors" id="keyFilter">
+                                        
+                                        <select 
+                                            name="key" 
+                                            id="key"
+                                            ngModel
+                                            (change)="onFiltersChange()"
+                                            >
+                                            <option value="C">C</option>
+                                            <option value="C2">C#</option>
+                                            <option value="Db">Db</option>
+                                            <option value="D">D</option>
+                                            <option value="D2">D#</option>
+                                            <option value="Eb">Eb</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="F2">F#</option>
+                                            <option value="Gb">Gb</option>
+                                            <option value="G">G</option>
+                                            <option value="G2">G#</option>
+                                            <option value="Ab">Ab</option>
+                                            <option value="A">A</option>
+                                            <option value="A2">A#</option>
+                                            <option value="Bb">Bb</option>
+                                            <option value="B">B</option>
+                                        
+                                        </select>
+                                    </div>
                                 </div>
+                               
                                 <button #filterSubmit >
                                 </button>
                             </form>
