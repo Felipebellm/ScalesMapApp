@@ -24,6 +24,7 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
 
   @Input() data!: string[];
   @Input() isCheckedShowNotes!: boolean;
+  @Input() isCheckedBluesNote!: boolean;
 
   scales: { 
     key: string; 
@@ -41,6 +42,7 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
     if (changes['data'] && !changes['data'].firstChange) {
       if (this.data[0] != '' && this.data[1] != '') {
         this.clearAll();
+        
         let result = this.loadingNotes.applyFilters(this.data, this.scales);
         
         
@@ -81,13 +83,28 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
           count++;
         });
         count = 1;
+
+        if (this.isCheckedBluesNote) {
+          this.bluesNote();
+        }
         
       }
     }
+
     if (changes['isCheckedShowNotes'] && !changes['isCheckedShowNotes'].firstChange) {
       
       this.toggleShowNotesCheckbox()
 
+    }
+
+    if (changes['isCheckedBluesNote'] && !changes['isCheckedBluesNote'].firstChange) {
+      if (this.isCheckedBluesNote) {
+        this.bluesNote()
+      } else {
+        this.elementsNote.forEach(element => {
+          this.renderer.removeClass(element.nativeElement, 'bluesNote');
+        });
+      }
     }
   }
 
@@ -131,6 +148,7 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
       this.renderer.removeClass(element.nativeElement, 'scale');
       this.renderer.removeClass(element.nativeElement, 'firstNote');
       this.renderer.removeClass(element.nativeElement, 'secondNote');
+      this.renderer.removeClass(element.nativeElement, 'bluesNote');
     });
   }
 
@@ -139,6 +157,57 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
       this.renderer.addClass(element.nativeElement, 'firstNote')
     } else if ( note.slice(-1) === 'b') {
       this.renderer.addClass(element.nativeElement, 'secondNote')
+    }
+  }
+
+  bluesNote() {
+    if (this.isCheckedBluesNote && this.data[0] === 'minorPentatonic' || this.data[0] === 'majorPentatonic') {
+      
+      let target = false;
+      let tnMinor = 3;
+      let tnMajor = 1;
+      let jump = false;
+      
+      this.scales.forEach(groupNotes => {
+        
+        if (groupNotes.key === this.data[1]) {
+          // console.log(groupNotes)
+          target = true;
+          if(groupNotes.key.slice(-1) === '2') {
+            jump = true;
+          }
+          
+          if (groupNotes.key === 'B') {
+            if (this.data[0] === 'minorPentatonic') { 
+              this.elementsF.forEach(element => {
+                this.renderer.addClass(element.nativeElement, 'bluesNote')
+              });
+            } else if ((this.data[0] === 'majorPentatonic')) {
+              this.elementsD.forEach(element => {
+                this.renderer.addClass(element.nativeElement, 'bluesNote')
+              });
+            }
+          }
+        } else if (target) {
+          if (!jump) {
+            if (this.data[0] === 'minorPentatonic') { 
+              groupNotes.minor[tnMinor].targets.forEach(element => {
+                this.renderer.addClass(element.nativeElement, 'secondNote')
+                this.renderer.addClass(element.nativeElement, 'bluesNote')
+              });  
+            } else if ((this.data[0] === 'majorPentatonic')) {
+              groupNotes.major[tnMajor].targets.forEach(element => {
+                this.renderer.addClass(element.nativeElement, 'secondNote')
+                this.renderer.addClass(element.nativeElement, 'bluesNote')
+              });  
+            }
+  
+            target = false;
+          } else {
+            jump = false;
+          }
+        }
+      });
     }
   }
 }

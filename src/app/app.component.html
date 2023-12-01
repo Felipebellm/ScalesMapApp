@@ -70,9 +70,9 @@
                                 #filtersForm="ngForm"
                                 >
                                 <div class="formGroup">
-                                    <div class="expande">
-                                        <label [ngClass]="{'move': isPentatonicMove}" for="">Choose your scale:</label>
-                                        <div [ngClass]="{'move': isPentatonicMove}" class="selectors" id="scaleFilter">
+                                    <div class="expand" [ngClass]="{'show': isPentatonic}">
+                                        <label for="">Choose your scale:</label>
+                                        <div class="selectors" id="scaleFilter">
                                             
                                             <select 
                                                 name="scale" 
@@ -101,6 +101,7 @@
                                                         type="checkbox" 
                                                         id="bluesNote" 
                                                         name="bluesNote" 
+                                                        (change)="onFiltersChange()"
                                                         [(ngModel)]="isCheckedBluesNote"
                                                     />
                                                 </div>
@@ -179,5 +180,6 @@
     <app-guitar-fretboard 
     [data]="data"
     [isCheckedShowNotes]="isCheckedShowNotes"
+    [isCheckedBluesNote]="isCheckedBluesNote"
     ></app-guitar-fretboard>
 </div>

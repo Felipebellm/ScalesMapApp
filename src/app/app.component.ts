@@ -13,7 +13,6 @@ export class AppComponent {
   isCheckedDarkTheme: boolean = false;
 
   isPentatonic: boolean = false;
-  isPentatonicMove: boolean = false;
   isCheckedBluesNote: boolean = false;
 
   data: any[] = []
@@ -38,21 +37,17 @@ export class AppComponent {
     
     if (form.value.scale === 'minorPentatonic' || form.value.scale === 'majorPentatonic') {
       this.isPentatonic = true;
-
-      setTimeout(() => {
-        this.isPentatonicMove = true;
-      }, 500);
     } else {
       this.isPentatonic = false;
     }
-
+    // console.log(this.isCheckedBluesNote)
     let scale :string = form.value.scale;
     let key :string = form.value.key;
     let position :string = form.value.position;
     if (position == "" || !position) {
       position = "all";
     }
-    this.data =  [scale, key, position]
+    this.data =  [scale, key, position, this.isCheckedBluesNote]
     // switch (scale) {
     //   case 'note':
     //     // this.byNote(key);
