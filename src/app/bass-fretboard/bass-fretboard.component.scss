@@ -13,7 +13,7 @@ $fretColor02 : #462C18;
     
     .fretboard {
         width: 90%;
-        height: 42vh;
+        height: 30vh;
         margin: 1% 1% 1% 1%;
         box-shadow: 0px 0px 9px 4px $gray-900;
         // background-color: #462C18;
@@ -28,8 +28,8 @@ $fretColor02 : #462C18;
             justify-content: center;
             align-items: center;
             .note {
-                height: 16.7%;
-                width: 7vh;
+                height: 25%;
+                width: 7.5vh;
                 border-radius: 100%;
                 background-color: #6c757d7e;
                 // opacity: 0.7;
@@ -108,7 +108,7 @@ $fretColor02 : #462C18;
                 z-index: 1;
             }
             .second {
-                margin-top: 200%;
+                margin-top: 100%;
             }
         }
         #fret1 {
@@ -234,42 +234,31 @@ $fretColor02 : #462C18;
             width: 100%;
             z-index: 9;
         }
-        #string01 {
-            top: 8%;
-            // border: 1px solid $gray-400;
-            background-color: $gray-400;
-            height: 0.5%;
-        }
-        #string02 {
-            top: 24.8%;
-            background-color: $gray-400;
-            height: 0.5%;
-        }
         #string03 {
-            top: 41.6%;
-            background-color: $gray-400;
-            height: 0.7%;
-        }
-        #string04 {
-            top: 58.4%;
-            background-color: $gray-400;
-            height: 1%;
-        }
-        #string05 {
-            top: 75%;
+            top: 12.5%;
             background-color: $gray-400;
             height: 1.5%;
         }
-        #string06 {
-            top: 91.5%;
+        #string04 {
+            top: 37.5%;
             background-color: $gray-400;
             height: 2%;
+        }
+        #string05 {
+            top: 62.5%;
+            background-color: $gray-400;
+            height: 2.5%;
+        }
+        #string06 {
+            top: 87.5%;
+            background-color: $gray-400;
+            height: 3%;
         }
         
     }
     .openNotes {
         // width: 90%;
-        height: 42vh;
+        height: 30vh;
         width: 8%;
         margin: 1% 0;
         background: none;

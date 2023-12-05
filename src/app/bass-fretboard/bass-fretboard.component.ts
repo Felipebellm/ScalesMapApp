@@ -1,12 +1,12 @@
 import { Component, AfterViewInit, Input, OnChanges, SimpleChanges, ViewChildren, ElementRef, QueryList, Renderer2 } from '@angular/core';
-import { LoadingNotesService } from '../services/loading-notes.service'
+import { LoadingNotesService } from '../services/loading-notes.service';
 
 @Component({
-  selector: 'app-guitar-fretboard',
-  templateUrl: './guitar-fretboard.component.html',
-  styleUrls: ['./guitar-fretboard.component.scss']
+  selector: 'app-bass-fretboard',
+  templateUrl: './bass-fretboard.component.html',
+  styleUrls: ['./bass-fretboard.component.scss']
 })
-export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
+export class BassFretboardComponent {
 
   @ViewChildren('C') elementsC!: QueryList<ElementRef>;
   @ViewChildren('CDb') elementsCDb!: QueryList<ElementRef>;
@@ -98,49 +98,46 @@ export class GuitarFretboardComponent implements AfterViewInit, OnChanges {
   }
 
   applyChanges() {
-    // debugger
-    if (this.data.length != 0) {
-      if (this.data[0] != '' && this.data[1] != '') {
-        this.clearAll();
-        
-        let result = this.loadingNotes.applyFilters(this.data, this.scales);
-        
-        let count: number = 1;
-        let skip: boolean = false;
-        result[0].forEach((notes: { note: string, targets: any[] }) => {
-          if (typeof(result[2]) !== 'undefined') {
-            result[2].forEach((n: number) => {
-              if (n === count) {
-                skip = true;
-              }
-            });
-          }
-          // debugger
-          if (!skip) {
-            notes.targets.forEach(element => {
-  
-              if (notes.note.length === 2) {
-                this.checkSB(element, notes.note);
-              }
-  
-              if (notes.note == result[1]) {
-                this.renderer.addClass(element.nativeElement, 'key')
-              } else {
-                this.renderer.addClass(element.nativeElement, 'scale')
-              }
-  
-            });  
-          }
-          skip = false;
-          count++;
-        });
-        count = 1;
-  
-        if (this.isCheckedBluesNote) {
-          this.bluesNote();
+    if (this.data[0] != '' && this.data[1] != '') {
+      this.clearAll();
+      
+      let result = this.loadingNotes.applyFilters(this.data, this.scales);
+      
+      let count: number = 1;
+      let skip: boolean = false;
+      result[0].forEach((notes: { note: string, targets: any[] }) => {
+        if (typeof(result[2]) !== 'undefined') {
+          result[2].forEach((n: number) => {
+            if (n === count) {
+              skip = true;
+            }
+          });
         }
-        
+        // debugger
+        if (!skip) {
+          notes.targets.forEach(element => {
+
+            if (notes.note.length === 2) {
+              this.checkSB(element, notes.note);
+            }
+
+            if (notes.note == result[1]) {
+              this.renderer.addClass(element.nativeElement, 'key')
+            } else {
+              this.renderer.addClass(element.nativeElement, 'scale')
+            }
+
+          });  
+        }
+        skip = false;
+        count++;
+      });
+      count = 1;
+
+      if (this.isCheckedBluesNote) {
+        this.bluesNote();
       }
+      
     }
   }
 

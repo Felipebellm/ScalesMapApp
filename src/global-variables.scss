@@ -2,7 +2,7 @@
 $primary-color: #1F1745;      // A vibrant blue for primary elements
 $secondary-color: #453F17;    // A warm red for secondary elements
 $third-color: #677999;
-$accent-color: #451E17;       // A bright yellow for accents
+$accent-color: #451e17;       // A bright yellow for accents
 
 // Text Colors
 $text-dark: #333;             // Dark text on light background
@@ -28,6 +28,10 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 
+
+.hide {
+    display: none !important;
+}
 
   
 

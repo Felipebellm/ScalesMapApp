@@ -1,20 +1,26 @@
-import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'scales-map-app';
 
   isCheckedShowNotes: boolean = false;
   isCheckedDarkTheme: boolean = false;
 
   isPentatonic: boolean = false;
-  isPentatonicMove: boolean = false;
   isCheckedBluesNote: boolean = false;
+
+  instSelectCallBack: string = '';
+
+  inst: string = '';
+
+  @ViewChildren('instrumentsModal') instrumentsModal!: QueryList<ElementRef>;
 
   data: any[] = []
   @ViewChildren('filterSubmit') filterSubmit!: QueryList<ElementRef>;
@@ -22,6 +28,18 @@ export class AppComponent {
   // toggleShowNotesCheckbox() {
    
   // }
+  
+  constructor(
+    private render: Renderer2,
+    private translate: TranslateService
+    ) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+
+  ngAfterViewInit(): void {
+    
+  }
 
 
   toggleDarkThemeCheckbox() {
@@ -38,35 +56,24 @@ export class AppComponent {
     
     if (form.value.scale === 'minorPentatonic' || form.value.scale === 'majorPentatonic') {
       this.isPentatonic = true;
-
-      setTimeout(() => {
-        this.isPentatonicMove = true;
-      }, 500);
     } else {
       this.isPentatonic = false;
     }
-
+    // console.log(this.isCheckedBluesNote)
     let scale :string = form.value.scale;
     let key :string = form.value.key;
     let position :string = form.value.position;
     if (position == "" || !position) {
       position = "all";
     }
-    this.data =  [scale, key, position]
-    // switch (scale) {
-    //   case 'note':
-    //     // this.byNote(key);
-    //     break;
-    //   case 'major':
-    //     // this.byMajor(key, position);
-    //     break;
-    //   case 'minor':
-    //     // this.byMinor(key, position);
-    //     break;
-    //     default:
-    //     // Default case
-    // }
+    this.data =  [scale, key, position, this.isCheckedBluesNote]
   }
 
-  
+  instrumentSelected(inst: string) {
+    this.inst = inst
+    if (this.inst != '') {
+      this.render.addClass(this.instrumentsModal.first.nativeElement, 'hide')
+      this.instSelectCallBack = inst;
+    }
+  }
 }

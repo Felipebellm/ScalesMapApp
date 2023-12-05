@@ -28,14 +28,14 @@
     
             <div class="menu_tab">
                 <input type="radio" id="tab-1" name="tab-group-1" checked>
-                <label class="tabLabel" for="tab-1">Filters</label>
+                <label class="tabLabel" for="tab-1">Filtros</label>
                 
                 <div class="menu_content">
                     <div class="content">
 
                         <div class="settingsToggle">
                             <div class="checkBox">
-                                <label>Show Notes: </label>
+                                <label>Mostrar Notas: </label>
                                 <label 
                                     for="showNotes" 
                                     class="checkBoxLabel"
@@ -49,7 +49,7 @@
                                 />
                             </div>
                             <div class="checkBox">
-                                <label>Dark theme: </label>
+                                <label>Tema Escuro: </label>
                                 <label 
                                     for="darkTheme" 
                                     class="checkBoxLabel"
@@ -70,9 +70,9 @@
                                 #filtersForm="ngForm"
                                 >
                                 <div class="formGroup">
-                                    <div class="expande">
-                                        <label [ngClass]="{'move': isPentatonicMove}" for="">Choose your scale:</label>
-                                        <div [ngClass]="{'move': isPentatonicMove}" class="selectors" id="scaleFilter">
+                                    <div class="expand" [ngClass]="{'show': isPentatonic}">
+                                        <label for="">Escolha a Escala:</label>
+                                        <div class="selectors" id="scaleFilter">
                                             
                                             <select 
                                                 name="scale" 
@@ -80,17 +80,17 @@
                                                 ngModel
                                                 (change)="onFiltersChange()"
                                                 >
-                                                <option value="note">By note</option>
-                                                <option value="major">Major</option>
-                                                <option value="minor">Minor</option>
-                                                <option value="minorPentatonic">Minor Pentatonic</option>
-                                                <option value="majorPentatonic">Major Pentatonic</option>
+                                                <option value="note">Por Nota</option>
+                                                <option value="major">Maior</option>
+                                                <option value="minor">Menor</option>
+                                                <option value="minorPentatonic">Pentatônica Maior</option>
+                                                <option value="majorPentatonic">Pentatônica Menor</option>
                                             </select>
                                         </div>
                                         <div class="bluesNote" [ngClass]="{'show': isPentatonic}">
                                             <div class="settingsToggle">
                                                 <div class="checkBox">
-                                                    <label>Blues Note: </label>
+                                                    <label>Nota Blues: </label>
                                                     <label 
                                                         for="bluesNote" 
                                                         class="checkBoxLabel"
@@ -101,6 +101,7 @@
                                                         type="checkbox" 
                                                         id="bluesNote" 
                                                         name="bluesNote" 
+                                                        (change)="onFiltersChange()"
                                                         [(ngModel)]="isCheckedBluesNote"
                                                     />
                                                 </div>
@@ -110,7 +111,7 @@
                                   
                                 </div>
                                 <div class="formGroup">
-                                    <label for="">Choose your key:</label>
+                                    <label for="">Escolha o Tom:</label>
                                     <div class="selectors" id="keyFilter">
                                         
                                         <select 
@@ -152,19 +153,23 @@
              
             <div class="menu_tab">
                 <input type="radio" id="tab-2" name="tab-group-1">
-                <label class="tabLabel" for="tab-2">Instruments</label>
+                <label class="tabLabel" for="tab-2">Instrumentos</label>
                 
                 <div class="menu_content">
-                    <span>content 2</span>
+                    <app-select-instrument
+                        [modal]="false"
+                        [instSelectCallBack]="instSelectCallBack"
+                        (inst)="instrumentSelected($event)"
+                    ></app-select-instrument>
                 </div> 
             </div>
              
              <div class="menu_tab">
                 <input type="radio" id="tab-3" name="tab-group-1">
-                <label class="tabLabel" for="tab-3">Suport Us</label>
+                <label class="tabLabel" for="tab-3">Em Desenvolvimento</label>
               
                 <div class="menu_content">
-                    <span>content 3</span>
+                    <span>Sem conteudo, Por enquanto!</span>
                 </div> 
             </div>
             
@@ -176,8 +181,29 @@
             </label>
         </form> -->
     </header>
+
+
     <app-guitar-fretboard 
-    [data]="data"
-    [isCheckedShowNotes]="isCheckedShowNotes"
+        [data]="data"
+        [isCheckedShowNotes]="isCheckedShowNotes"
+        [isCheckedBluesNote]="isCheckedBluesNote"
+        *ngIf="inst == 'g6'"
     ></app-guitar-fretboard>
+
+    <app-bass-fretboard
+        [data]="data"
+        [isCheckedShowNotes]="isCheckedShowNotes"
+        [isCheckedBluesNote]="isCheckedBluesNote"
+        *ngIf="inst == 'b4'"
+    ></app-bass-fretboard>
+
+</div>
+
+<div #instrumentsModal id="instrumentsModal">
+    <div>
+        <app-select-instrument
+        [modal]="true"
+        (inst)="instrumentSelected($event)"
+        ></app-select-instrument>
+    </div>
 </div>

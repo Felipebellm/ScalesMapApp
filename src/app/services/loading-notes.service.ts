@@ -420,7 +420,11 @@ export class LoadingNotesService {
             targets = [groupNotes.minor, groupNotes.key];
             break;
           case 'minorPentatonic':
-            targets = [groupNotes.minor, groupNotes.key, [2,6]];
+            // if (!filter[3]) {
+              targets = [groupNotes.minor, groupNotes.key, [2,6]];
+            // } else {
+            //   let bluesNote = this.bluesNote(groupNotes.minor)
+            // }
             break;
           case 'majorPentatonic':
             targets = [groupNotes.major, groupNotes.key, [4,7]];
@@ -432,5 +436,9 @@ export class LoadingNotesService {
     });
 
     return targets;
+  }
+
+  bluesNote(groupNotes: any[]) {
+    debugger
   }
 }
