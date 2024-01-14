@@ -1,215 +1,240 @@
 @import './../global-variables.scss';
 
 
-.content {
-    // width: 100%;
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // position: relative;
-    header {
+:host {
+    width: fit-content;
+    height: auto;
+
+    .content {
         width: 100%;
-        height: 150px;
-        // background-color: $background-light;
-        position: absolute;
-        top: 0;
+        height: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        #logoContainer {
-            width: 200px;
-            height: 100%;
-            // background-color: $background-dark;
-            background-image: radial-gradient(#5a3a23, #5a3a23, #5a3a23, #52341e, #4b301b, #4e311c, #442a18,#2b1b0f, #20140b);
+
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // position: relative;
+        header {
+            width: 100%;
+            height: 150px;
+            // background-color: $background-light;
+            position: absolute;
+            top: 0;
             display: flex;
             justify-content: center;
-            border-radius: 0 0 12px 12px;
             align-items: center;
-            box-shadow: 0px 0px 5px 3px $gray-500;
-            svg {
-                width: 6%;
-                height: auto;
-                position: absolute;
-                // text-shadow: 0px 0px 5px 3px $gray-500;
-                filter: drop-shadow(0px 0px 8px $gray-900);
-                // box-shadow: 0px 0px 5px 3px $gray-500;
-            }
-            #logo {
-                // background-color: $third-color;
-                // width: 100px;
-                // height: 100px;
-                // margin-left: 3%;
-                border-radius: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                font-size: 30px;
-                // font-family: Lato;
-                color: $text-light;
-                font-weight: 700;
-                // box-shadow: 0px 0px 5px 3px $gray-500;
-                position: relative;
-                z-index: 2;
-                
-                
-            }
-        }
-        .menu_tabs {
-            position: relative;  
-            margin-left: 1%; 
-            box-shadow: 0px 0px 7px 3px $gray-400;
-            height: 100%;
-            // clear: both;
-            // margin: 25px 0;
-            display: flex;
-            width: 83%;
-            
-            flex-direction: column;
-            .menu_tab {
-                // float: left;  
-                // clear: both;
-                
-                width: 15%;
-                display: flex;
+
+            #logoContainer {
+                width: 200px;
                 height: 100%;
+                // background-color: $background-dark;
+                background-image: radial-gradient(#5a3a23, #5a3a23, #5a3a23, #52341e, #4b301b, #4e311c, #442a18, #2b1b0f, #20140b);
+                display: flex;
                 justify-content: center;
+                border-radius: 0 0 12px 12px;
                 align-items: center;
-                .tabLabel {
-                    background: #eee;
-                    border: 1px solid #ccc;
-                    margin-left: -1px;
-                    font-size: 21px;
-                    // vertical-align: middle;
-                    // position: relative;
-                    // left: 1px;
-                    cursor: pointer;
-                    width: 100%;
+                box-shadow: 0px 0px 5px 3px $gray-500;
+
+                svg {
+                    width: 6%;
+                    height: auto;
+                    position: absolute;
+                    // text-shadow: 0px 0px 5px 3px $gray-500;
+                    filter: drop-shadow(0px 0px 8px $gray-900);
+                    // box-shadow: 0px 0px 5px 3px $gray-500;
+                }
+
+                #logo {
+                    // background-color: $third-color;
+                    // width: 100px;
+                    // height: 100px;
+                    // margin-left: 3%;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 30px;
+                    // font-family: Lato;
+                    color: $text-light;
+                    font-weight: 700;
+                    // box-shadow: 0px 0px 5px 3px $gray-500;
+                    position: relative;
+                    z-index: 2;
+
+
+                }
+            }
+
+            .menu_tabs {
+                position: relative;
+                margin-left: 1%;
+                box-shadow: 0px 0px 7px 3px $gray-400;
+                height: 100%;
+                // clear: both;
+                // margin: 25px 0;
+                display: flex;
+                width: 83%;
+
+                flex-direction: column;
+
+                .menu_tab {
+                    // float: left;  
+                    // clear: both;
+
+                    width: 15%;
                     display: flex;
                     height: 100%;
-                    // padding-left: 50%;
-                    text-align: center;
-                    // display: table-cell;
                     justify-content: center;
-                    
                     align-items: center;
-                }
-                [type=radio]:checked ~ label {
-                    background: white;
-                    border-bottom: 2px solid $success;
-                    z-index: 2;
-                }
-                [type=radio]:checked ~ label ~ .menu_content {
-                    z-index: 1;
-                }
-                .menu_content {
-                    position: absolute;
-                    top: 0;
-                    left: 15%;
-                    width: auto;
-                    background: $background-light;
-                    padding: 15px 10px;
-                    right: 0;
-                    bottom: 0;
-                    // display: flex;
-                    // padding: 20px;
-                    // border: 1px solid #ccc;
-                    label {
-                        font-size: 20px;
-                    }
-                    .content {
-                        display: flex;
+
+                    .tabLabel {
+                        background: #eee;
+                        border: 1px solid #ccc;
+                        margin-left: -1px;
+                        font-size: 21px;
+                        // vertical-align: middle;
+                        // position: relative;
+                        // left: 1px;
+                        cursor: pointer;
                         width: 100%;
+                        display: flex;
                         height: 100%;
-                        .settingsToggle {
+                        // padding-left: 50%;
+                        text-align: center;
+                        // display: table-cell;
+                        justify-content: center;
+
+                        align-items: center;
+                    }
+
+                    [type=radio]:checked~label {
+                        background: white;
+                        border-bottom: 2px solid $success;
+                        z-index: 2;
+                    }
+
+                    [type=radio]:checked~label~.menu_content {
+                        z-index: 1;
+                    }
+
+                    .menu_content {
+                        position: absolute;
+                        top: 0;
+                        left: 15%;
+                        width: auto;
+                        background: $background-light;
+                        padding: 15px 10px;
+                        right: 0;
+                        bottom: 0;
+
+                        // display: flex;
+                        // padding: 20px;
+                        // border: 1px solid #ccc;
+                        label {
+                            font-size: 20px;
+                        }
+
+                        .content {
                             display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            width: 350px;
-                            transition: .5s;
-                            .checkBox {
+                            width: 100%;
+                            height: 100%;
+
+                            .settingsToggle {
                                 display: flex;
-                                // width: 20%;
-                                height: 30%; 
+                                flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
-                                margin: 6% 12%;
-                                // background-color: #1c100c2a;
-                                input {
-                                    display: none;
-                                }
-        
-                                .checkBoxLabel {
-                                    width: 36px;
-                                    height: 20px;
-                                    margin-left: 18px;
-                                    border-radius: 15px;
-                                    // background-color: $gray-400;
-                                    background-image: radial-gradient( $gray-200,$gray-300,$gray-400, $gray-500);
-                                    vertical-align: middle;
-                                    text-align: center;
+                                width: 350px;
+                                transition: .5s;
+
+                                .checkBox {
                                     display: flex;
-                                    justify-content: baseline;
-                                    overflow: hidden;
-                                    cursor: pointer;
-                                    transition: .9s;
-                                    &::after {
-                                        content : '';
-                                        display: block;
-                                        width: 20px;
-                                        height: 20px;
-                                        border-radius: 100px;
-                                        background-color: $gray-500;
-                                        box-shadow: 0px 0px 4px 1px $gray-500;
-                                        transition: .9s;
-        
+                                    // width: 20%;
+                                    height: 30%;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 6% 12%;
+
+                                    // background-color: #1c100c2a;
+                                    input {
+                                        display: none;
                                     }
-                                }
-                                .checkBoxLabel.checked {
-                                    justify-content: end;
-                                    // transition: .5s;
-                                    transition: .9s;
-                                    &::after {
-                                        background-color: $success;
+
+                                    .checkBoxLabel {
+                                        width: 36px;
+                                        height: 20px;
+                                        margin-left: 18px;
+                                        border-radius: 15px;
+                                        // background-color: $gray-400;
+                                        background-image: radial-gradient($gray-200, $gray-300, $gray-400, $gray-500);
+                                        vertical-align: middle;
+                                        text-align: center;
+                                        display: flex;
+                                        justify-content: baseline;
+                                        overflow: hidden;
+                                        cursor: pointer;
                                         transition: .9s;
+
+                                        &::after {
+                                            content: '';
+                                            display: block;
+                                            width: 20px;
+                                            height: 20px;
+                                            border-radius: 100px;
+                                            background-color: $gray-500;
+                                            box-shadow: 0px 0px 4px 1px $gray-500;
+                                            transition: .9s;
+
+                                        }
+                                    }
+
+                                    .checkBoxLabel.checked {
+                                        justify-content: end;
+                                        // transition: .5s;
+                                        transition: .9s;
+
+                                        &::after {
+                                            background-color: $success;
+                                            transition: .9s;
+                                        }
                                     }
                                 }
                             }
-                        }
 
-                        // SETTINGS INNER TAB
-                        .filters {
-                            // background-color: blue;
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            .formGroup {
+                            // SETTINGS INNER TAB
+                            .filters {
+                                // background-color: blue;
                                 width: 100%;
+                                height: 100%;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
-                                flex-direction: column;
-                                border-left: 1px solid $gray-500;
-                                height: 100%;
-                                .expand {
+
+                                .formGroup {
                                     width: 100%;
                                     display: flex;
-                                    
                                     justify-content: center;
                                     align-items: center;
                                     flex-direction: column;
-                                    
-                                    transition: .5s;
-                                    overflow: hidden;
-                                }
-                                // .expand.show {
-                                //     height: 200%;
-                                // }
+                                    border-left: 1px solid $gray-500;
+                                    height: 100%;
+
+                                    .expand {
+                                        width: 100%;
+                                        display: flex;
+
+                                        justify-content: center;
+                                        align-items: center;
+                                        flex-direction: column;
+
+                                        transition: .5s;
+                                        overflow: hidden;
+                                    }
+
+                                    // .expand.show {
+                                    //     height: 200%;
+                                    // }
                                     .selectors {
                                         width: 60%;
                                         display: flex;
@@ -233,18 +258,22 @@
                                         // }
                                         // overflow: hidden;
                                         border-radius: .25em;
+
                                         select {
-                                           width: 80%;
-                                           font-size: 18px;
-                                           margin-top: 5px
+                                            width: 80%;
+                                            font-size: 18px;
+                                            margin-top: 5px
                                         }
+
                                         select::-ms-expand {
                                             display: none;
                                         }
                                     }
+
                                     .move {
                                         background-color: #4b301b;
                                     }
+
                                     // #scaleFilter {
                                     //     position: relative;
                                     // }
@@ -258,53 +287,59 @@
                                         bottom: -80%;
                                         height: 0%;
                                     }
+
                                     .bluesNote.show {
                                         // display: flex;
                                         height: 50%;
                                         bottom: 0;
                                     }
-                               
-                            }
-                            
-                            button {
-                                display: none;
+
+                                }
+
+                                button {
+                                    display: none;
+                                }
                             }
                         }
+
+
+
+
+
                     }
-                    
-                    
-                    
-
-
                 }
             }
-        }
-        .menu_tab [type=radio] {
-            display: none;   
+
+            .menu_tab [type=radio] {
+                display: none;
+            }
         }
     }
-}
-#instrumentsModal {
-    
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #110801ce;
-    z-index: 2;
-    position: absolute;
-    // opacity: 0.5;
-    div {
-        width: 32%;
-        padding: 1.5% 3%;
-        z-index: 5;
-        // height: 20%;
-        background-color: $background-light;
-        box-shadow: 0 0 8px 4px $gray-900;
-        border-radius: 18px;
-        // padding: 0;
+
+    #instrumentsModal {
+
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #110801ce;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+
+        // opacity: 0.5;
+        div {
+            width: 32%;
+            padding: 1.5% 3%;
+            z-index: 5;
+            // height: 20%;
+            background-color: $background-light;
+            box-shadow: 0 0 8px 4px $gray-900;
+            border-radius: 18px;
+            // padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

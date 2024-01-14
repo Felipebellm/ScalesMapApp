@@ -3,12 +3,19 @@
 $fretColor01 : #1C100C;
 $fretColor02 : #462C18;
 
+:host {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   width: 100%; 
+   justify-content: center;
+}
 #card {
     // background-color: $background-light;
     // width: 95%;
     // height: 45%;
     display: flex;
-    margin-top: 17%;
+    // margin-top: 17%;
     
     
     .fretboard {
