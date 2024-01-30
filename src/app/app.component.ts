@@ -1,6 +1,7 @@
 import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {TranslateService} from "@ngx-translate/core";
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -31,14 +32,15 @@ export class AppComponent implements AfterViewInit{
   
   constructor(
     private render: Renderer2,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private screenOrientation: ScreenOrientation
     ) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
 
   ngAfterViewInit(): void {
-    
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 
 
@@ -76,4 +78,5 @@ export class AppComponent implements AfterViewInit{
       this.instSelectCallBack = inst;
     }
   }
+ 
 }
