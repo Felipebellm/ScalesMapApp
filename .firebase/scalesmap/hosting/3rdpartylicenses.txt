@@ -16,6 +16,12 @@ MIT
 @angular/router
 MIT
 
+@ionic-native/core
+MIT
+
+@ionic-native/screen-orientation
+MIT
+
 @ngx-translate/core
 SEE LICENSE IN LICENSE
 
