@@ -14,6 +14,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { SelectInstrumentComponent } from './select-instrument/select-instrument.component';
 import { BassFretboardComponent } from './bass-fretboard/bass-fretboard.component';
 
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { BassFretboardComponent } from './bass-fretboard/bass-fretboard.componen
   ],
   providers: [
     LoadingNotesService,
+    ScreenOrientation,
   ],
   bootstrap: [AppComponent],
 })

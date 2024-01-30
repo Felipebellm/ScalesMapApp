@@ -2,7 +2,7 @@
 
 
 :host {
-    width: fit-content;
+    // width: fit-content;
     height: auto;
 
     .content {
@@ -311,6 +311,11 @@
             }
 
             .menu_tab [type=radio] {
+                display: none;
+            }
+        }
+        @media (max-width: 1024px) {
+            header {
                 display: none;
             }
         }

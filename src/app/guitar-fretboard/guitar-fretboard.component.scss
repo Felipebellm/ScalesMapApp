@@ -6,10 +6,12 @@ $fretColor02 : #462C18;
 :host {
    display: flex;
    flex-direction: column;
-   height: 100%;
+   margin-top: 5%;
+   height: 89%;
    width: 100%; 
    justify-content: center;
 }
+
 #card {
     // background-color: $background-light;
     // width: 95%;
@@ -292,6 +294,295 @@ $fretColor02 : #462C18;
         }
         .fret{
             width: 100%;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    #card {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        .fretboard {
+            height: 74vh;
+            width: 68%;
+            display: flex;
+            flex-flow: column;
+            
+            
+            .marking {
+                display: none;
+            }
+            #fret1 {
+                height: 10.5%;
+                order: 12;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret2 {
+                height: 10%;
+                order: 11;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret3 {
+                height: 9.5%;
+                order: 10;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+                // // position: relative;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // &::after {
+                //     content: '';
+                //     position: absolute;
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                // }
+            }
+            #fret4 {
+                height: 9%;
+                order: 9;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret5 {
+                height: 8.5%;
+                order: 8;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+                // position: relative;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // &::after {
+                //     content: '';
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                // }
+            }
+            #fret6 {
+                height: 8%;
+                order: 7;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret7 {
+                height: 7.5%;
+                order: 6;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+                // position: relative;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // &::after {
+                //     content: '';
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                // }
+            }
+            #fret8 {
+                height: 7.5%;
+                order: 5;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret9 {
+                height: 7.5%;
+                order: 4;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+                // position: relative;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // &::after {
+                //     content: '';
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                // }
+            }
+            #fret10 {
+                height: 7%;
+                order: 3;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret11 {
+                height: 6.5%;
+                order: 2;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+            }
+            #fret12 {
+                height: 6.5%;
+                order: 1;
+                width: 100%;
+                border-bottom: 0.25vw  solid $gray-300;
+                // position: relative;
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // align-items: center;
+                // &::after {
+                //     content: '';
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                //     margin-top: 100%;
+                // }
+                // &::before {
+                //     content: '';
+                //     width: 25px;
+                //     height: 25px;
+                //     background-color: $gray-400;
+                //     border-radius: 100%;
+                //     display: flex;
+                // }
+            }
+            .fret {
+                z-index: 10;
+                position: relative;
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                order: 0;
+                border-right: 0!important;
+                .note {
+                    width: 16.7%;
+                    height: 11vw;
+                    border-radius: 100%;
+                    background-color: #6c757d7e;
+                    // opacity: 0.7;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    // vertical-align: middle;
+                    z-index: 10;
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: $text-light;
+                    visibility: visible;
+                    order: 0;
+                    transform: rotate(-90deg);
+                    p {
+                        font-size: 94%;
+                    }
+                    span{
+                       
+                        // transform: rotate(-90deg);
+                        display: flex;
+                        p {
+                            font-size: 10%;
+    
+                            opacity: 1;
+                            margin: 0;
+                        }
+                       
+                    }
+                }
+                .note:nth-child(1) {
+                    order: 6;
+                }
+                .note:nth-child(2) {
+                    order: 5;
+                }
+                .note:nth-child(3) {
+                    order: 4;
+                }
+                .note:nth-child(4) {
+                    order: 3;
+                }
+                .note:nth-child(5) {
+                    order: 2;
+                }
+                .note:nth-child(6) {
+                    order: 1;
+                }    
+            }
+            .string {
+                position: absolute;
+                height: 100%!important;
+                z-index: 9;
+                // display: none;
+                top: 0!important;
+                
+            }
+            #string01 {
+                left: 8%;
+                // border: 1px solid $gray-400;
+                background-color: $gray-400;
+                width: 2%;
+            }
+            #string02 {
+                left: 24.8%;
+                background-color: $gray-400;
+                width: 1.5%;
+            }
+            #string03 {
+                left: 41.6%;
+                background-color: $gray-400;
+                width: 1%;
+            }
+            #string04 {
+                left: 58.4%;
+                background-color: $gray-400;
+                width: 0.7%;
+            }
+            #string05 {
+                left: 75%;
+                background-color: $gray-400;
+                width: 0.5%;
+            }
+            #string06 {
+                left: 91.5%;
+                background-color: $gray-400;
+                width: 0.5%;
+            }
+        }  
+        .openNotes {
+            order: 2;
+            // width: 90%;
+            height: 10vh;
+            // width: 8%;
+            margin: 0 1%;
+            background: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: none;
+            .fret0 {
+                width: 100%;
+                z-index: 10;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .fret{
+                width: 100%;
+            }
+            
         }
     }
 }
