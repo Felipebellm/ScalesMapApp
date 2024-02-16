@@ -297,7 +297,7 @@ $fretColor02 : #462C18;
         }
     }
 }
-@media (max-width: 1024px) {
+@media (orientation: portrait) {
     #card {
         display: flex;
         flex-flow: column;
