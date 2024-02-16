@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService } from "@ngx-translate/core";
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
@@ -8,7 +8,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit {
   title = 'scales-map-app';
 
   isCheckedShowNotes: boolean = false;
@@ -27,20 +27,21 @@ export class AppComponent implements AfterViewInit{
   @ViewChildren('filterSubmit') filterSubmit!: QueryList<ElementRef>;
 
   // toggleShowNotesCheckbox() {
-   
+
   // }
-  
+
   constructor(
     private render: Renderer2,
     private translate: TranslateService,
     private screenOrientation: ScreenOrientation
-    ) {
+  ) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
 
   ngAfterViewInit(): void {
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    // debugger
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS);
   }
 
 
@@ -55,20 +56,20 @@ export class AppComponent implements AfterViewInit{
   }
 
   onSubmit(form: NgForm) {
-    
+
     if (form.value.scale === 'minorPentatonic' || form.value.scale === 'majorPentatonic') {
       this.isPentatonic = true;
     } else {
       this.isPentatonic = false;
     }
     // console.log(this.isCheckedBluesNote)
-    let scale :string = form.value.scale;
-    let key :string = form.value.key;
-    let position :string = form.value.position;
+    let scale: string = form.value.scale;
+    let key: string = form.value.key;
+    let position: string = form.value.position;
     if (position == "" || !position) {
       position = "all";
     }
-    this.data =  [scale, key, position, this.isCheckedBluesNote]
+    this.data = [scale, key, position, this.isCheckedBluesNote]
   }
 
   instrumentSelected(inst: string) {
@@ -78,5 +79,5 @@ export class AppComponent implements AfterViewInit{
       this.instSelectCallBack = inst;
     }
   }
- 
+
 }
