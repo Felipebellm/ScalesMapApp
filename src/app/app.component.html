@@ -166,11 +166,9 @@
              
              <div class="menu_tab">
                 <input type="radio" id="tab-3" name="tab-group-1">
-                <label class="tabLabel" for="tab-3">Em Desenvolvimento</label>
+                <label class="tabLabel" for="tab-3">Afinador</label>
               
-                <div class="menu_content">
-                    <span>Sem conteudo, Por enquanto!</span>
-                </div> 
+                <!--   -->
             </div>
             
              
@@ -201,9 +199,11 @@
 
 <div #instrumentsModal id="instrumentsModal">
     <div>
-        <app-select-instrument
+        <!-- <app-select-instrument
         [modal]="true"
         (inst)="instrumentSelected($event)"
-        ></app-select-instrument>
+        ></app-select-instrument> -->
+        <app-tuner>
+            </app-tuner>
     </div>
 </div>

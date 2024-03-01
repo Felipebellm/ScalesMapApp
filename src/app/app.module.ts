@@ -15,6 +15,7 @@ import { SelectInstrumentComponent } from './select-instrument/select-instrument
 import { BassFretboardComponent } from './bass-fretboard/bass-fretboard.component';
 
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { TunerComponent } from './tuner/tuner.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     GuitarFretboardComponent,
     SelectInstrumentComponent,
     BassFretboardComponent,
+    TunerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<!-- tuner.component.html -->
+<div *ngIf="isMicrophoneAccessAllowed">
+    <!-- UI for tuner component -->
+  </div>
+  <div *ngIf="!isMicrophoneAccessAllowed">
+    <p>Error: Microphone access denied.</p>
+  </div>
